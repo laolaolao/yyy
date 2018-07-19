@@ -1,0 +1,217 @@
+#header{
+    height: 30px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    line-height: 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+#login-info span{
+    margin-right: 14px;
+}
+#login-info a{
+    margin-right: 14px;
+}
+#login-info{
+    float: left;
+ }
+ #quick-menu{
+     float: right;
+ }
+ #quick-menu .menu{
+     float: left;
+     position: relative;
+     padding: 0 14px;
+     height: 31px;
+     border-style: solid;
+     border-width: 0 1px 0 1px;
+     border-color: transparent;
+ }
+ #header a:hover{
+     color: #FF0036;
+ }
+ #header a, #login-info span{
+     color: #999;
+ }
+#header .triangle::after{
+    content: '';
+    border-width: 3px;
+    border-style: solid;
+    border-top-color: #bbb;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 0;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -2px;
+    -webkit-transition: none ;
+    -moz-transition: none;
+    -ms-transition: none ;
+    -o-transition: none ;
+    transition: none ;
+}
+#quick-menu .menu:hover::after{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: transform.5s ease;
+    -moz-transition: transform.5s ease;
+    -ms-transition: transform.5s ease;
+    -o-transition: transform.5s ease;
+    transition: transform.5s ease;
+    transform-origin: 3px 1.5px;
+}
+#quick-menu .menu:hover{
+    background-color:#ffffff;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+    border-color: #e5e5e5;
+}
+#header .triangle:hover >a{
+     text-decoration: underline;
+     color: #FF0036;
+}
+#quick-menu .submenu{
+    position: absolute;
+    width: 85px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    top: 30px;
+    left: -1px;
+    padding: 0 14px;
+    display: none;
+    background-color:white;
+}
+#quick-menu .triangle:hover .submenu{
+    display: block;
+}
+.submenu:hover{
+    text-decoration: underline;
+    color: #FF0036;
+}
+#quick-menu .mobile:hover .qr-code{
+    display: block;
+}
+#quick-menu .qr-code{
+    width: 175px;
+    height: 225px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+    position: absolute;
+    top: 28px;
+    left: -50px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    display: none;
+
+}
+#quick-menu .qr-code::after{
+    content: '';
+    border-style: solid;
+    border-width: 5px;
+    border-color:transparent transparent  #ffffff transparent;
+    position: absolute;
+    top: -10px;
+    left: 79px;
+}
+#logo-search{
+    height: 135px;
+}
+#logo img{
+    width: 240px;
+}
+#search{
+    margin-top: 38px;
+    margin-left: 50px;
+}
+#search,#logo {
+    float: left;
+}
+#search .search-box{
+    width: 629px;
+    height: 40px;
+    border: 2px solid #ff0000;
+}
+#search .search-ipt{
+    width: 493px;
+    height: 39px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+    font-size: 14px;
+}
+#search .search-but{
+    width: 136px;
+    height: 39.5px;
+    outline: none;
+    background-color: #FF0000;
+    color: #fffdef;
+    border:  #ff0000;
+}
+#search .hot{
+    float: left;
+    padding: 0 12px;
+    border-right: 1px solid #cccccc ;
+    font-size: 12px;
+    margin-top: 10px;
+}
+#search .last{
+    border: none;
+}
+#search .hot-query a{
+    color: #999999;
+}
+#search .hot-query-highlight a{
+    color: #FF0036;
+}
+#main-nav .nav-img{
+    width: 100px;
+}
+#main-nav .nav{
+    margin-left: 200px;
+    height: 35px;
+    
+}
+#main-nav .nav li{
+    float:left;
+}
+#main-nav .nav a{
+    margin-right: 15px;
+    color: #333333;
+    line-height:35px;
+    font-weight: 500;
+}
+#main-nav .nav a:hover{
+    color: #FF0036;
+}
+#banner{
+    background-color: #042769;
+}
+ #banner .wrapper{
+     height: 500px;
+    background: url(../img/banner1.webp) no-repeat center;
+     position: relative;
+}
+ #banner .category-type{
+     width: 200px;
+     height: 536px;
+     background-color: rgba(0,0,0 ,.55);
+     position: absolute;
+     top: -36px;
+ }
+ #banner .category-type li{
+     height: 36px;
+     padding-left: 10px;
+     line-height: 36px;
+ }
+ #banner .product-type{
+     background-color: #FF0036;
+ }
+ #banner .category-type a{
+     color: #fffdef;
+ }

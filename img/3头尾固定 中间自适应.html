@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body, #parent{
+            width: 100%;
+            height: 100%;
+        }
+        #parent{
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0;
+        }
+        #head{
+            top: 0;
+        }
+        #foot{
+            bottom: 0;
+        }
+        #head,#foot{
+            height: 50px;
+            background-color: #FF0036;
+            position: fixed;
+            width: 100%;
+        }
+        #center{
+            background-color: black;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="head"></div>
+        <div id="center"></div>
+        <div id="foot"></div>
+    </div>
+</body>
+</html>

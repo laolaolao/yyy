@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**{*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        
+        .elem{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #FF0036;
+            float: left;
+            position: relative;
+        }
+        .one{
+
+        }
+        .two{
+            transform: translate(-1px);
+        }
+        .three{
+            transform:translateY(-1px);
+        }
+        .four{
+            transform:translate(-1px,-1px);
+        }
+        .elem:hover{
+            border-color: #00ff00;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="elem one"></div>
+        <div class="elem two"></div>
+        <div class="elem three"></div>
+        <div class="elem four"></div>
+    </div>
+</body>
+</html>
