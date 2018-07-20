@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    //  var age = window.prompt("请输入你的年龄");
+    //  if(age<18){
+    //      console.log('未成年')
+    //  }
+    //  else if(age >18 && age <= 30){
+    //      console.log('青少年');
+    //  }
+    //  else if (age >31 && age < 50) {
+    //     console.log('中老年');
+    //  }
+    //  else if(age >= 51&& age < 70){
+    //      console.log('老年');
+    //  }
+    //  else if (age>=71){
+    //      console.log('恭喜');
+    //  }
+    //  var a =4;
+    //  switch (a) {
+    //      case 2:
+    //          console.log(2);
+    //          break;
+    //      case 3:
+    //          console.log(3);
+    //          break;
+    //      case 4:
+    //          console.log(4);
+    //          break;
+    //      case 5:
+    //          console.log(5);
+    //
+   // function sum (a, b){
+   //     return a * b;
+   // }
+   // var res = sum (3 , 4);
+   // console.log(res * 2);
+
+    // var fn1=function () {
+    //     console.log('fn1');
+    // }  ;
+    // fn1();
+    // fn1();
+    //         var fn1 = function(){
+    //             console.log('fn1');
+    //         };
+//     如果某年的年份值是4的倍数并且不是100的倍数，或者该年份值是400的倍数，那么这一年就是闰年。请编制一个页面，该页面显示当天是否处于闰年。
+// 提示：使用以下语句，可使变量year的值就是当天所属的年份值。
+// var today = new Date();   //获取当天日期
+//     var year = today.getFullYear();   //获取当天年份
+   function getLeapYear(year) {
+       if ( ( year % 4== 0 && year % 100 !=0 )|| year % 400 ==0) {
+        return ture
+       }else {
+           return false
+       }
+
+   }  console.log(2018);
+
+     </script>
+</body>
+</html>
