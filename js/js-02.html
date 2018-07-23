@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+        }
+
+        #menu{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            cursor: pointer;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            display: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+   <div id="menu"><div id="div2"></div></div>
+
+   <script>
+       var oMenu=document.getElementById("menu");
+       var oDiv2=document.getElementById("div2");
+       document.onclick=function () {
+           oMenu.style.backgroundColor="red";
+           oDiv2.style.display="none";
+
+       }
+       document.oncontextmenu=function (ev) {
+           ev=ev||window.event;
+          oDiv2.style.display="block";
+          oDiv2.style.left=ev.clientX+"px";
+          oDiv2.style.top=ev.clientY+"px";
+          return false;
+       }
+   </script>
+</body>
+</html>

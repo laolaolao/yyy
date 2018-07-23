@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #menu{
+            width: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            display: none;
+            position: absolute;
+        }
+        li{
+            list-style: none;
+           text-align: center;
+            border-bottom: 1px dashed;
+            cursor: pointer;
+        }
+        .last{
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>菜单一</li>
+    <li>菜单二</li>
+    <li>菜单三</li>
+    <li class="last">菜单四</li>
+</ul>
+<script>
+    var oMenu=document.getElementById("menu");
+    var oLi=document.getElementsByName("li")
+    document.oncontextmenu=function (ev) {
+        ev = ev||window.event;
+        oMenu.style.display='block';
+        oMenu.style.left = ev.clientX+"px";
+        oMenu.style.top = ev.clientY+"px";
+        return false;
+    }
+    document.onclick=function() {
+        oMenu.style.display="none";
+    }
+    for ( var i=0;i<=oLi.length;i++){
+        oLi[i].onclick=function () {
+            alert(this.innerHTML);
+        }
+    }
+</script>
+</body>
+</html>
