@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu .item{
+            width: 120px;
+            height: 30px;
+            background-color: #cccccc;
+            float: left;
+            margin-left: 5px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #box{
+            width: 400px;
+            height: 300px;
+            border:1px solid black;
+            margin: 100px;
+        }
+        #menu{
+            border-bottom: 1px solid black;
+        }
+        #menu .menu-selected{
+            background-color: black;
+            color: #cccccc;
+        }
+
+        #content div{
+            display: none;
+        }
+        #content .content-selected{
+            display: block;
+        }
+        #content
+    </style>
+</head>
+<body>
+        <div id="box">
+                <ul id="menu" class="clearfix">
+                    <li class="item menu-selected">html</li>
+                    <li class="item">css</li>
+                    <li class="item">javascript</li>
+                </ul>
+            <div id="content">
+                <div class="content-selected">001</div>
+                <div>002</div>
+                <div>003</div>
+            </div>
+        </div>
+        <script>
+            var oMenu=document.getElementById("menu");
+            var oLi=oMenu.getElementsByTagName("li");
+            var content=document.getElementById("content");
+            var oDiv=content.getElementsByTagName("div");
+
+            for (var i=0;i<oLi.length;i++) {
+                oLi[i].index=i;
+                oLi[i].onclick=function () {
+                for (var j=0;j<oLi.length;j++) {
+                    oLi[j].className="item";
+                    oDiv[j].className=" ";
+                }
+                this.className +=" menu-selected";
+                    oDiv[this.index].className= " content-selected";
+
+                };
+            }
+
+
+        </script>
+</body>
+</html>
