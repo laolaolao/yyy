@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top{
+            position: relative;
+            width: 520px;
+            height: 280px;
+        }
+        #content img{
+            display: none;
+        }
+        #content  .content-selected{
+            display: block;
+        }
+        #menu{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        #menu li ,#arrows span{
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            cursor: pointer;
+            list-style: none;
+            color: #fffdef;
+            float: left;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+        }
+        #arrows{
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+        }
+        #menu .menu-selected{
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div id="top">
+<div id="content">
+    <img src="1.jpg" alt="" class="content-selected">
+    <img src="2.jpg" alt="">
+    <img src="3.jpg" alt="">
+    <img src="4.jpg" alt="">
+</div>
+    <ul id="menu">
+        <li class="menu-selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <span id="prev">&lt</span>
+        <span id="next">&gt</span>
+    </div>
+</div>
+<script>
+    var oContent =document.getElementById("content");
+    var oImg = oContent.getElementsByTagName("img");
+    var oMenu = document.getElementById("menu");
+    var oLi = oMenu.getElementsByTagName("li");
+    var oPrev=document.getElementById("prev");
+    var oNext=document.getElementById("next");
+    var oTop=document.getElementById("top");
+    var iNowIndex = 0;
+    var timer;
+    for(var i=0;i<oLi.length;i++){
+        oLi[i].xx=i;
+        oLi[i].onmouseover=function () {
+            for (var j=0;j<oLi.length;j++){
+                oLi[j].className=" ";
+                oImg[j].className=" ";
+            }
+            this.className=" menu-selected";
+            oImg[this.xx].className=" content-selected"
+        }
+    }
+        oPrev.onclick= oNext.onclick=function () {
+            if (this===oPrev){
+                iNowIndex--;
+                if (iNowIndex == -1){
+                    iNowIndex = oLi.length -1;
+                }
+            }else {
+                iNowIndex++;
+                if (iNowIndex == oLi.length) {
+                    iNowIndex = 0;
+                }
+            }changeImg();
+        };
+        oTop.onmouseover=function(){
+            clearInterval(timer);
+        };
+        oTop.onmouseout=function () {
+            player();
+        }
+         player();
+        oNext.onclick=function () {
+            iNowIndex++;
+            if ( iNowIndex==oLi.length) {
+                iNowIndex=0;
+            }
+          changeImg();
+        }
+        function changeImg() {
+            for (var i=0;i<oLi.length;i++){
+                oLi[i].className=" ";
+                oImg[i].className=" ";
+            }
+            oLi[iNowIndex].className=" menu-selected";
+            oImg[iNowIndex].className=" content-selected"
+        }
+        function player() {
+            timer=setInterval(function () {
+                oNext.onclick();
+            },1000);
+        }
+</script>
+</body>
+</html>
