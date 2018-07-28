@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="../../fellows24/jquery/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+<div id="menu">个人基本信息
+<form id="f" action="">
+     <lable >姓名:</lable>
+     <input type="text" name="name">
+     <br>
+     <lable >密码:</lable>
+     <input type="password" name="pass">
+    <br>
+     <lable>详细信息:</lable>
+    <textarea name="msg" id="" cols="30" rows="10"></textarea>
+</form>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $(":input ").focus(function () {
+            $(this).addClass("focus");
+        })
+    })
+</script>
+</body>
+</html>
