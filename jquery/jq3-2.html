@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul,li{
+            margin:0px;
+            padding:0px;
+            list-style:none;
+        }
+        li{
+            float:left;
+            background-color:#aaa;
+            color:white;
+            padding:5px;
+            margin-right:2px;
+            border:1px solid white;
+        }
+        #div1{
+            clear:left;
+            background-color:#777;
+            color:white;
+            width:300px;
+            height:100px;
+            padding:10px;
+
+        }
+        #div1 div{
+            display: none;
+        }
+        #div1 .divOne{
+            display: block;
+        }
+        .liOne{
+            background-color:#777;
+            border:1px solid #777;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li class="liOne">标签1</li>
+    <li>标签2</li>
+    <li>标签3</li>
+</ul>
+<div id="div1">
+    <div class="divOne">我是内容1</div>
+    <div>我是内容2</div>
+    <div>我是内容3</div>
+</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+    $("#ul1 li").on("click",function () {
+        $(this).addClass("liOne").siblings().removeClass("liOne");
+        var index=$("#ul1 li").index(this);
+        $("#div1 div") .eq(index).addClass("divOne").siblings().removeClass("divOne")
+    })
+    })
+</script>
+</html>

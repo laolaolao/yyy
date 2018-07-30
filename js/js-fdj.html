@@ -36,12 +36,13 @@
     <div id="drag"></div>
 </div>
 <div id="big">
-    <img src="1fangdajing%20(2).jpg" alt="">
+    <img src="1fangdajing%20(2).jpg" alt="" id="big-img">
 </div>
 <script>
     var oSmall=document.getElementById("small");
     var oDrag=document.getElementById("drag");
     var oBig=document.getElementById("big");
+    var oBigImg = document.getElementById('big-img');
     oSmall.onmouseover=function () {
         oDrag.style.display="block";
         oBig.style.display="block";
@@ -51,17 +52,36 @@
         oDrag.style.display="none";
         oBig.style.display="none";
     };
-    oDrag.onmousemove=function (ev) {
+    oSmall.onmousemove=function (ev) {
         ev=ev||window.event;
-        var top = ev.clientY - oDrag.offsetHeight / 2;
-        var left = ev.clientX - oDrag.offsetWidth / 2;
-        if(top < 0){
+        var top = ev.clientY - oDrag.offsetHeight / 2 ;
+        var left = ev.clientX - oDrag.offsetWidth / 2 ;
+        if (top<0){
             top = 0;
         }
-        if(left < 0){
-            left = 0;
+        if (left<0){
+            left= 0;
         }
+        var leftMax = oSmall.offsetWidth- oDrag.offsetWidth;
+        var topMax=oSmall.offsetHeight-oDrag.offsetHeight;
+        if (left>leftMax){
+            left=leftMax;
+        }
+        if (top>topMax){
+            top=topMax;
+        }
+        oDrag.style.top=top+"px";
+        oDrag.style.left=left+"px"
+        oDrag.style.top = top + 'px';
+        oDrag.style.left = left + 'px';
 
+        // drag移动的百分比
+        var dragDansX = oDrag.offsetLeft / leftMax;
+        var dragDansY = oDrag.offsetTop / topMax;
+
+        // 设置大图片的位置
+        oBigImg.style.left = -dragDansX * (oBigImg.offsetWidth - oBig.offsetWidth) + 'px';
+        oBigImg.style.top = -dragDansY * (oBigImg.offsetHeight - oBig.offsetHeight) + 'px';
     }
 
 </script>
