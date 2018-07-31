@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            position: relative;
+        }
+        *{
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #left{
+            width: 404px;
+            height: 662px;
+        }
+        #header{
+            width: 404px;
+            height: 96px;
+        }
+
+       #header #primary{
+           float: left;
+       }
+
+        #header #menu{
+            width: 356px;
+            height: 48px;
+            padding: 24px
+        }
+
+        #menu #header-logo{
+            float: left;
+            width: 36px;
+        }
+        #primary li{
+            float: left;
+            padding: 5px 10px 5px;
+            letter-spacing: 1px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        #primary ul{
+            margin-left: -25px;
+        }
+        #header #header-img{
+            float: right;
+            margin-top: 10px;
+        }
+        #body1{
+            width: 404px;
+        }
+        #content{
+            width: 296px;
+            height: 318px;
+            margin: auto;
+            padding-top: 210px;
+            padding-left:84px ;
+            padding-right: 24px;
+            ;
+        }
+        #content>span{
+            width: 296px;
+            height: 72px;
+            line-height: 72px;
+            font-size:26px ;
+            font-weight: 700
+        }
+        #footer {
+            width: 269px;
+            height: 39px;
+        }
+        #footer #footer1{
+            margin-right: 24px;
+        }
+         #footer #footer1 img{
+             margin-bottom: -10px;
+        }
+        #footer #footer1 span{
+            color: #009758;
+        }
+        #footer #footer2 span{
+            color: #009758;
+            padding: 2px 12px;
+            border: 1px #009758 solid;
+            border-radius:48px;
+        }
+        #banner{
+              width: 944px;
+              height: 443px;
+             position: absolute;
+             left: 404px;
+             top: 0;
+          }
+        #banner img{
+            width:944px ;
+        }
+        #banner .banner-img {
+            display: none;
+        }
+        #wrapper-fluid{
+            width: 944px;
+            height: 202px;
+            position: absolute;
+            top:445px;
+            left: 404px;
+        }
+        #wrapper-fluid .grid{
+            width: 920px;
+            height: 202px;
+            margin: 12px auto;
+        }
+
+        #wrapper-fluid img{
+            width: 282.75px;
+            padding-right: 12px;
+        }
+        #program{
+            width: 944px;
+            height: 247px;
+            position: absolute;
+            top: 662px;
+            left: 404px;
+        }
+
+        #program-msr-left{
+            width:360px;
+            height: 245px;
+            float: left;
+        }
+        #program-msr-right{
+            float: left;
+        }
+        #program-msr-right img{
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+<div id="left">
+        <div id="header">
+            <div id="menu">
+            <a href="" ><img src="logo.svg" alt="" id="header-logo"></a>
+            <div id="primary">
+                <ul >
+                    <li>门店</li>
+                    <li >我的账户</li>
+                    <li>菜单</li>
+                </ul>
+            </div>
+            <a href="" id="header-img"><img src="icon-hamburger.svg" alt=""></a>
+            </div>
+        </div>
+            <div id="body1">
+                <div id="content">
+                         <span>心情惬意，来杯咖啡吧 ☕</span>
+                        <div id="footer">
+                            <a href="" id="footer1">
+                                <img src="icon-account.svg" alt="">
+                                <span>登陆</span>
+                            </a>
+                            <a href="" id="footer2">
+                                <span>注册</span>
+                            </a>
+                        </div>
+                </div>
+            </div>
+</div>
+    <div id="banner">
+        <img src="fp-cold-foam.jpg" alt="">
+        <a href="">
+            <img src="kv-bev.jpg" alt="" class="banner-img">
+            <img src="kv-mooncake.jpg" alt=""class="banner-img">
+        </a>
+    </div>
+<div id="wrapper-fluid">
+    <div class="grid">
+        <a href=""><img src="starbucks-tmall-0723-cn.jpg" alt=""></a>
+        <a href=""><img src="starbucks-design-studio-web-china.jpg" alt=""></a>
+        <a href=""><img src="homepage-career-cn.jpg" alt=""></a>
+    </div>
+</div>
+<div id="program ">
+        <div id="program-msr-left">
+            <h2>星享俱乐部</h2>
+            <p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="">了解更多 ›</a></p>
+            <p>
+                <a href="">注册</a>
+                <a href="">登录</a>
+            </p>
+        </div>
+        <div id="program-msr-right">
+            <img src="logo-msr.svg" alt="">
+        </div>
+</div>
+</body>
+</html>
