@@ -4,125 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-
-        *{
-            margin: 0;
-        }
-        li{
-            list-style: none;
-        }
-        a{
-            text-decoration: none;
-        }
-        body{
-            background: #cccccc;
-        }
-        #left{
-            width: 30%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            background-color: #fffdef;
-        }
-        #header #menu{
-            height: 48px;
-            padding: 24px
-
-        }
-       #header #primary{
-           float: left;
-       }
-        #menu #header-logo{
-            float: left;
-            width: 36px;
-        }
-        #primary li{
-            float: left;
-            padding: 5px 10px 5px;
-            letter-spacing: 1px;
-            font-size: 16px;
-            font-weight: 700;
-        }
-        #primary ul{
-            margin-left: -25px;
-        }
-        #header #header-img{
-            float: right;
-
-        }
-        #body1{
-            margin-top: 200px;
-        }
-       #body1-span >span{
-           font-size: 26px;
-           font-weight: 700;
-           margin-bottom: 24px;
-           padding-left: 24px;
-       }
-       #footer{
-           padding-left: 24px;
-       }
-       #footer span{
-            color: #00A862;
-            font-size: 16px;
-            font-weight: 400;
-           margin-top: -10px;
-        }
-        @media (max-width: 1024px) {
-            #left {
-                right: 0;
-                height: 182px;
-                width: 100%;
-            }
-
-            #body1{
-                margin-top: 0;
-            }
-
-        }
-        #banner{
-              width: 70%;
-              height: 443px;
-             position: absolute;
-             left: 404px;
-             top: 0;
-          }
-        #banner img{
-            width:944px ;
-        }
-        #banner .banner-img {
-            display: none;
-        }
-        #wrapper-fluid{
-            width: 70%;
-            height: 202px;
-            position: absolute;
-            top:445px;
-            left: 404px;
-        }
-        #wrapper-fluid .grid{
-            width: 920px;
-            height: 202px;
-            margin: 12px auto;
-        }
-
-        #wrapper-fluid img{
-            width: 282.75px;
-            padding-right: 12px;
-        }
-        #program{
-            width: 944px;
-            height: 247px;
-            position: absolute;
-            top: 662px;
-            left: 404px;
-        }
-
-
-
-    </style>
+    <link rel="stylesheet" href="css/xingbake.css">
 </head>
 <body>
 <div id="left">
@@ -155,20 +37,15 @@
                 </div>
 
 </div>
-    <div id="banner">
-        <img src="fp-cold-foam.jpg" alt="">
-        <a href="">
-            <img src="kv-bev.jpg" alt="" class="banner-img">
-            <img src="kv-mooncake.jpg" alt=""class="banner-img">
-        </a>
+<div id="right">
+    <div class="banner">
+        <div class="banner-container">
+            <img src="fp-cold-foam.jpg" alt="">
+            <img src="kv-bev.jpg" alt="" >
+            <img src="kv-mooncake.jpg" alt="">
+        </div>
     </div>
-<div id="wrapper-fluid">
-    <div class="grid">
-        <a href=""><img src="starbucks-tmall-0723-cn.jpg" alt=""></a>
-        <a href=""><img src="starbucks-design-studio-web-china.jpg" alt=""></a>
-        <a href=""><img src="homepage-career-cn.jpg" alt=""></a>
-    </div>
-</div>
+
 
 </div>
 </body>
