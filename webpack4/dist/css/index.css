@@ -1,6 +1,8 @@
-#div1{
-    width: 400px;
-    height: 400px;
-    /* background-color: #ccc; */
-    background-image: url(http://127.0.0.1:8081/images/4dfeaf260e039a62d0d0554e077bc132.jpg)
+#div1 {
+  width: 400px;
+  height: 400px;
+  /* background-color: #ccc; */
+  background-image: url(http://127.0.0.1:8081/images/4dfeaf260e039a62d0d0554e077bc132.jpg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
 }

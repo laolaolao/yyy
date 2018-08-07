@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ca0f0110f2dffdd73ab9";
+/******/ 	var hotCurrentHash = "e4203ba301088e502a02";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -809,11 +809,11 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/index.css */ \"./src/css/index.css\");\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\r\nlet oDiv1 = document.querySelector('#div1');\r\noDiv1.innerHTML = 'Hello Wolrd index1';\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _index = __webpack_require__(/*! ./css/index.css */ \"./src/css/index.css\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar oDiv1 = document.querySelector('#div1');\noDiv1.innerHTML = 'Hello Wolrd index1';\nvar sum = function sum(x, y) {\n  return x + y;\n};\n$('#div3').html('\\u4F5C\\u8005\\u662F\\uFF1A' + author.name + ', \\u516C\\u53F8\\u662F: ' + author.company);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
