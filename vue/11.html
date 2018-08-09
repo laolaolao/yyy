@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            border: 0;
+        }
+        html, body{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        li{
+            list-style: none;
+
+        }
+        #content{
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+        }
+        #content h1{
+            text-align: center;
+        }
+        #menu{
+            width: 550px;
+            height: 400px;
+            margin-right: 20px;
+        }
+        #menu li{
+        line-height: 80px;
+        font-size: 24px;
+        margin-bottom: 10px;
+        }
+        .span2{
+            float: right;
+        }
+        .red{
+            background-color: red;
+        }
+       
+    </style>
+
+</head>
+<body>
+    <div id="content">
+      <h1>todolist</h1>
+      <label for="m" >名称</label>
+      <input type="text" v-model="name" id="m">
+      <label for="j" >价格</label>
+      <input type="text" v-model="price" id="j">
+      <button>增加</button>
+      <br>
+      <input type="text" id="">
+      <button @click="add">查询</button>
+        <ul id="menu">
+            <li v-for ="(arr,index) in arr" @click="toogle(arr)" :class="[arr.xz? 'red': ' ']">
+                <input @click.stop type="checkbox" v-model="checkedList" :value="index" name="" id="">
+                <button @click = "del(index)">{{arr.shape}}</button>
+                <span class="span1">{{arr.name}}</span>
+                <span class="span2">{{arr.price}}</span>
+            </li>
+        </ul>
+        <button @click="decheck()">删除选中</button>
+        <span>总价是：{{total}}元</span>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    let vm = new Vue({
+        el:'#content',
+        data:{
+            arr:[
+                {
+                    name :"衣服",
+                    price:123,
+                    xz:false,
+                    shape:"x"
+                },{
+                    name :"裤子",
+                    price:567,
+                    xz:false,
+                    shape:"x"
+                },{
+                    name :"鞋",
+                    price:66,
+                    xz:false,
+                    shape:"x"
+                },{
+                    name :"iphonex",
+                    price:8888,
+                    xz:false,
+                    shape:"x"
+                },{
+                    name :"电脑",
+                    price:986,
+                    xz:false,
+                    shape:"x"
+                }
+            ],
+            checkedList:[],
+            price:0,
+            name:'',
+
+        },
+        methods:{
+            toogle(arr){
+                arr.xz =!arr.xz;
+                this.total + arr.price
+            }, del(index){
+                this.arr.splice(index,1)
+            },decheck(){
+                this.arr=this.arr.filter((elem,index) =>{
+                    if(!this.checkedList.includes(index)){
+                        return(elem);
+                    }
+                });
+                this.checkedList=[];
+            },add(){
+                this.arr.push({
+                   name:this.name,
+                   price:this.price,
+                   xz:false,
+                });
+                this.name=' ';
+                this.price= 0;
+
+            }
+        },
+        computed :{
+            total(){
+                let sum = 0;
+            this.arr.forEach(elem=> {
+                if (elem.xz) {
+                    sum += elem.price;
+                }
+            });
+            return sum;
+            }
+        }
+    });
+    </script>
+</body>
+</html>
