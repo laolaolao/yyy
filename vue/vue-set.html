@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <button @click="click()">click</button>
+        <ul>
+            <li v-for="(item,index) in arr">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            arr:['a','b','c'],
+            arr1:false,
+        },
+        methods:{
+            click:function(){
+                if(!this.arr1)
+                Vue.set(this.arr, 2, "d")
+
+            }
+        }
+    })
+    </script>
+</body>
+</html>
