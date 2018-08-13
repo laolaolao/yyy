@@ -8,8 +8,12 @@
       <router-link :to="{name:'time1', params: {name: 'xxx', age: 18} }">分针</router-link> |
       <router-link to="/time/time2">秒针</router-link> |
       <router-link to="/testUrl/555/zhangsan">URL传参</router-link> |
+      <router-link to='/yy/66/ls'>重定向</router-link> |
+      <router-link to='/timealias'>alias</router-link>
     </div>
-    <router-view/>
+    <transition name="fa">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -31,4 +35,14 @@
     }
   }
 }
+.fa-enter {
+  opacity: 0;
+}
+.fa-enter-active {
+  transition: opacity 5s ease;
+}
+.fa-enter-to {
+  opacity: 1;
+}
+.fa-leave {}
 </style>
