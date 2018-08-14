@@ -1,12 +1,10 @@
 <template>
   <div id="app">
      <commonHeader :selectMenu="selectMenu"></commonHeader>
-    <router-view class="content"/>
-   <CommonFooter :menuList="menuList" @changeTitle="changeTitle"></CommonFooter>
+    <router-view class="content" @switchTab="switchTab"/>
+   <CommonFooter :menuList="menuList" @changeTitle="changeTitle" :footerBgColor="selectMenu.bgColor"></CommonFooter>
   </div>
 </template>
-
-
 <script>
 import CommonHeader from '@/components/CommonHeader.vue';
 import CommonFooter from '@/components/CommonFooter.vue'
@@ -17,7 +15,14 @@ export default {
   methods:{
     changeTitle(menu){
       this.selectMenu = menu;
-    }
+    },
+    switchTab(menuName){
+      this.menuList.forEach(menu=>{
+        if(menu.name===menuName){
+          this.selectMenu = menu;
+        }
+      })
+   }
   },
  data () {
     return {
@@ -44,7 +49,7 @@ export default {
           path: '/photo'
         }
       ],
-        selectMenu: {} 
+      selectMenu:{},
     }
   }
 }
