@@ -6,7 +6,8 @@ import './registerServiceWorker';
 
 Vue.config.productionTip = false;
 import '@/assets/css/reset.css';
-import '@/assets/js/rem.js'
+import '@/assets/js/rem.js';
+import '@/assets/img/timg.gif'
 new Vue({
   router,
   store,
