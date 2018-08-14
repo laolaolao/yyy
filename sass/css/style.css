@@ -1,5 +1,13 @@
 #div {
-  background-color: #fff;
-}
+  background-color: #fff; }
+  #div .aa {
+    font-size: 12px; }
+    #div .aa .bb {
+      background-color: red; }
+    #div .aa:hover {
+      background: #00ff00; }
+
+#div2 {
+  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
