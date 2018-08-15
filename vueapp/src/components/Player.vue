@@ -43,7 +43,7 @@ export default {
             albumAnthor:"",
             isPlay:false,
             toggleList:true,
-            musicImgSrc: "" 
+            musicSrc: "" 
         }; 
     },
     
@@ -71,7 +71,7 @@ export default {
             }
         }
         },
-     watch:{
+        watch:{
         nowIndex() {
       let nowMusic = this.musicList[this.nowIndex];
       this.albumImg = nowMusic.musicImgSrc;
