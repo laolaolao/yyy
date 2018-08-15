@@ -10,11 +10,11 @@
                       <div class="movie-into-title">{{movie.title}}</div>
                       <div>观众评分：<span class="movie-into-average">{{movie.rating.average}}</span></div>
                       <div class="movie-into-star">
-                        <span v-for="item in movie.casts" :key="item.id">{{item.name}}&nbsp</span>
+                        <span v-for="item in movie.casts" :key="item.id">{{item.name}} &nbsp;</span>
                       </div>
                   </div>
                 </li>
-            </ul>
+            </ul>  
         </div>
         <div class="loading" v-show="isLoading">
             <img src="@/assets/img/timg.gif" alt="">

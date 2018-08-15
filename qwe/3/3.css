@@ -1,0 +1,32 @@
+html,body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+#box{
+    background:linear-gradient(to right,yellow ,orange);
+    color:white;
+    width: 150px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 15%;
+    border: 1px solid darkgoldenrod;
+
+}
+#box {
+    transform: perspective(500px) rotateY(-15deg);
+    text-shadow: 6px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#box:hover {
+    transform: perspective(500px) rotateY(15deg);
+    text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#box{
+    transition: 1s;
+}
+

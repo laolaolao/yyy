@@ -1,4 +1,16 @@
 $color:#fff;
 #div{
     background-color: $color;
+    .aa{
+        font-size: 12px;
+        .bb{
+            background-color: red;
+        }
+        &:hover{
+            background: #00ff00;
+        }
+    }
+}
+#div2{
+    color: $color
 }
