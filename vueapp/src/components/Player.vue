@@ -27,12 +27,15 @@
     </li>
 </ul>
     </transition>
-    <div> <audio ref="musicAudio" :src="musicSrc" autoplay controls @play="isPlay=true" @pause="isPlay=false"></audio></div>
+    <div class="audio"> <audio ref="musicAudio" class="audio-ctrl" :src="musicSrc" autoplay controls @play="isPlay=true" @pause="isPlay=false"></audio></div>
+    <ul class="lrcList" ref="lrcList">
+        <li :class=" lrcIndex==index? 'selected':'' "  v-for="(lrc,index) in lrcList" :key="index">{{lrc.lrc}}</li>
+    </ul>
 </div>
 
 </template>
 <script>
-
+import axios from 'axios'
 export default {
     props:["musicList"],
     data(){
@@ -43,7 +46,10 @@ export default {
             albumAnthor:"",
             isPlay:false,
             toggleList:true,
-            musicSrc: "" 
+            musicSrc: "" ,
+            lrcList:[],
+            lrcIndex:-1,
+           
         }; 
     },
     
@@ -61,26 +67,65 @@ export default {
         prev(){
             this.nowIndex--;
             if(this.nowIndex == -1){
-                this.nowIndex = this.musicList.lenght - 1;
+                this.nowIndex = this.musicList.length - 1;
             }
         },
         next(){
             this.nowIndex++;
-            if(this.nowIndex == this.musicList.lenght){
+            if(this.nowIndex == this.musicList.length){
                 this.nowIndex = 0;
             }
+        },
+        parseLrc(text){
+            let line =text.split('\n');
+            // console.log(line)
+            line.forEach(elem => {
+                let time = elem.match(/\[\d{2}:\d{2}.\d{2}\]/);
+                // console.log(time)
+                if(time!=null){
+                    let lrc=elem.split(time)[1];
+                    let timeReg = time[0].match(/(\d{2}):(\d{2}).(\d{2})/);
+                    //   console.log(timeReg)
+                  
+                    let time2Seconds = parseInt(timeReg[1]) * 60 + parseInt(timeReg[2]) + parseInt(timeReg[3]) / 1000;
+                    // console.log(time2Seconds)
+                    this.lrcList.push({
+                        time:time2Seconds,
+                        lrc:lrc,
+                    })
+        }
+            });
         }
         },
-        watch:{
-        nowIndex() {
+     watch: {
+    nowIndex() {
       let nowMusic = this.musicList[this.nowIndex];
       this.albumImg = nowMusic.musicImgSrc;
       this.albumTitle = nowMusic.title;
       this.albumAuthor = nowMusic.author;
       this.musicSrc = nowMusic.src;
-    }
-    },
-       
+      this.lrcList = [];
+
+      axios.get('/'+nowMusic.lrc).then(res=>{
+          this.parseLrc(res.data)
+      })
+        }
+  },
+  mounted(){
+      let musicAudio = this.$refs.musicAudio;
+      this.$refs.musicAudio.addEventListener('timeupdate',()=>{
+          let currentTime = musicAudio.currentTime
+          this.lrcList.forEach((elem,index)=> {
+    //  console.log(elem.time,currentTime)
+            if(Math.ceil(elem.time)>=currentTime && Math.floor(elem.time)<currentTime){
+                this.lrcIndex=index;
+                // console.log(this.lrcIndex);
+                this.$refs.lrcList.scrollTop = this.lrcIndex*25;
+                console.log(  this.$refs.lrcList.scrollTop )
+            }
+          });
+      })
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -88,6 +133,8 @@ export default {
     display: flex;
     position: relative;
     text-align: center;
+    height: 2.3rem;
+
     &-mask{
         position: absolute;
         top: 0;
@@ -114,7 +161,7 @@ export default {
 }
 .music-list{
     position: fixed;
-    bottom: 1rem;
+    bottom: 2rem;
     width: 100%;
     height: 4rem;
     background-color: #2a2929;
@@ -148,7 +195,30 @@ export default {
     transition:transform 1s ease;
      }
     }
-
- 
 }
+.audio {
+  background: #ccc;
+  height: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  width: 100%;
+  &-ctrl {
+    width: 100%;
+  }
+};
+    .lrcList{
+    text-align: center;
+    position: fixed;
+    top: 3.3rem;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    overflow-y: scroll;
+    z-index: -1;
+    padding-top: 2rem;
+.selected{
+        color:chocolate;
+        font-size: 120%;
+    }
+    }
 </style>
