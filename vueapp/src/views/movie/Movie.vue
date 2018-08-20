@@ -2,7 +2,7 @@
     <div>
         <div>
             <ul>
-                <li class="movie" v-for="movie in  movieList" :key="movie.id">
+                <li  @click="gotoDetail(movie.id)" class="movie" v-for="movie in  movieList" :key="movie.id">
                     <div class="movie-img">
                         <img :src="movie.images.large" alt="">
                 </div>
@@ -53,6 +53,9 @@ export default {
         }
            
         })
+    },
+    gotoDetail(movieId){
+      this.$router.push(`/moviedetail/${movieId}`);
     }
     },
    
